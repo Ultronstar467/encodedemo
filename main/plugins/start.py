@@ -13,55 +13,37 @@ from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'{st}', 
-                      buttons=[
-                              [Button.inline("Menu.", data="menu")]
-                              ])
+    await event.reply(f'Hey [{event.sender.first_name}](tg://user?id={event.sender_id})\n\nJust Send Me Video or File To Get Started', 
+                      buttons=[[
+                         Button.inline("🌌 SET THUMB", data="sett"),
+                         Button.inline("🗑️ DEL THUMB", data='remt')],
+                         [
+                         Button.inline("❔ HELP", data="plugins"),
+                         Button.inline("🗜️ RESTART", data="restart")],
+                         [
+                         Button.inline("🎇 NOTICE", data="notice")],
+                         [
+                         Button.url("👲 DEV", url=f"t.me/Tellybots")]])
+
     tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await Drone.send_message(int(ACCESS_CHANNEL), f'{tag} started the BOT')
     
-@Drone.on(events.callbackquery.CallbackQuery(data="menu"))
-async def menu(event):
-    await vc_menu(event)
-    
-@Drone.on(events.callbackquery.CallbackQuery(data="info"))
-async def info(event):
-    await event.edit(f'**ℹ️NFO:**\n\n{info_text}',
-                    buttons=[[
-                         Button.inline("Menu.", data="menu")]])
+
     
 @Drone.on(events.callbackquery.CallbackQuery(data="notice"))
 async def notice(event):
     await event.answer(f'{spam_notice}', alert=True)
     
-@Drone.on(events.callbackquery.CallbackQuery(data="source"))
-async def source(event):
-    await event.edit(source_text,
-                    buttons=[[
-                         Button.url("FOR PERSONAL USE", url="https://github.com/vasusen-code/videoconvertor/tree/main"),
-                         Button.url("FOR YOUR CHANNEL ", url="https://github.com/vasusen-code/videoconvertor/")]])
-                         
-                    
-@Drone.on(events.callbackquery.CallbackQuery(data="help"))
-async def help(event):
-    await event.edit('**👥HELP & SETTINGS**',
-                    buttons=[[
-                         Button.inline("SET THUMB", data="sett"),
-                         Button.inline("REM THUMB", data='remt')],
-                         [
-                         Button.inline("PLUGINS", data="plugins"),
-                         Button.inline("RESTART", data="restart")],
-                         [Button.url("SUPPORT", url=f"{SUPPORT_LINK}")],
-                         [
-                         Button.inline("BACK", data="menu")]])
+
     
 @Drone.on(events.callbackquery.CallbackQuery(data="plugins"))
 async def plugins(event):
     await event.edit(f'{help_text}',
-                    buttons=[[Button.inline("Menu.", data="menu")]])
+                    buttons=[[Button.inline("NOTICE", data="notice")]])
                    
  #-----------------------------------------------------------------------------------------------                            
     
+
 @Drone.on(events.callbackquery.CallbackQuery(data="sett"))
 async def sett(event):    
     button = await event.get_message()
@@ -96,3 +78,4 @@ async def res(event):
         await event.edit("An error occured!")
     elif result is True:
         await event.edit("Restarting app, wait for a minute.")
+
