@@ -61,7 +61,7 @@ async def compin(event):
 async def _encode(event):
     await event.edit("**🔀ENCODE**",
                     buttons=[
-                        [Button.inline("240p", data="200"),
+                        [Button.inline("240p", data="240"),
                          Button.inline("360p", data="360")],
                         [Button.inline("480p", data="480"),
                          Button.inline("720p", data="720")],
@@ -375,7 +375,7 @@ async def _360(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
 
-@Drone.on(events.callbackquery.CallbackQuery(data="360"))
+@Drone.on(events.callbackquery.CallbackQuery(data="240"))
 async def _240(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
