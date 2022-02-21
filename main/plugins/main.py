@@ -353,7 +353,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=854x480 -b:v 1024k -quality good -speed 4 -crf 30'
+        cmd = '-vf scale=854x480 -b:v 750k -quality good -speed 4 -crf 30'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -369,12 +369,28 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=640x360 -b:v 1024k -quality good -speed 4 -crf 30'
+        cmd = '-vf scale=640x360 -b:v 276k -quality good -speed 4 -crf 30'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
-                  
+
+@Drone.on(events.callbackquery.CallbackQuery(data="360"))
+async def _240(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("encodemedia"):
+        await event.delete()
+        os.mkdir("encodemedia")
+        cmd = '-vf scale=320x240 -b:v 200k -quality good -speed 4 -crf 30'
+        await encode(event, msg, cmd)
+        os.rmdir("encodemedia")
+    else:
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+                                    
         
 
 @Drone.on(events.callbackquery.CallbackQuery(data="720"))
