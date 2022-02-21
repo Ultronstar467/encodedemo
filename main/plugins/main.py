@@ -369,7 +369,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = 'scale=640x360'
+        cmd = 'scale=360'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -403,7 +403,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-scale=1280x720'
+        cmd = '-scale=720'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
