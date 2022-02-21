@@ -398,7 +398,7 @@ async def _480(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
-@Drone.on(events.callbackquery.CallbackQuery(data="720"))
+@Drone.on(events.callbackquery.CallbackQuery(data="20"))
 async def _720(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -416,6 +416,21 @@ async def _720(event):
         await set_timer(event, process1, timer) 
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+@Drone.on(events.callbackquery.CallbackQuery(data="720"))
+async def _640(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("compressmedia"):
+        await event.delete()
+        os.mkdir("compressmedia")
+        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4'
+        await compress(event, msg, cmd)
+        os.rmdir("compressmedia")
+    else:
+        await event.edit("Another process in progress!")
           
 @Drone.on(events.callbackquery.CallbackQuery(data="sshots"))
 async def ss_(event):
