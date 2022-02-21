@@ -411,7 +411,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 720)
+        await encode(event, msg, 1280x720)
         os.rmdir("encodemedia")
         await set_timer(event, process1, timer) 
     else:
