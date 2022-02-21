@@ -369,7 +369,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=640x360 -b:v 276k -quality good -speed 4 -crf 30'
+        cmd = 'scale=640x360'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -385,7 +385,7 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=320x240 -b:v 200k -quality good -speed 4 -crf 30'
+        cmd = 'scale=320x240'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -403,7 +403,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4 -crf 30'
+        cmd = '-scale=1280x720'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
