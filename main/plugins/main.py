@@ -341,96 +341,57 @@ async def _265(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
-@Drone.on(events.callbackquery.CallbackQuery(data="240"))
-async def _240(event):
-    yy = await force_sub(event.sender_id)
-    if yy is True:
-        return await event.reply(forcesubtext)
-    s, t = await check_timer(event, process1, timer) 
-    if s == False:
-        return await event.answer(t, alert=True)
-    button = await event.get_message()
-    msg = await button.get_reply_message()  
-    if not os.path.isdir("encodemedia"):
-        await event.delete()
-        os.mkdir("encodemedia")
-        await encode(event, msg, 240)
-        os.rmdir("encodemedia")
-        await set_timer(event, process1, timer) 
-    else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
-        
-@Drone.on(events.callbackquery.CallbackQuery(data="360"))
-async def _360(event):
-    yy = await force_sub(event.sender_id)
-    if yy is True:
-        return await event.reply(forcesubtext)
-    s, t = await check_timer(event, process1, timer) 
-    if s == False:
-        return await event.answer(t, alert=True)
-    button = await event.get_message()
-    msg = await button.get_reply_message()  
-    if not os.path.isdir("encodemedia"):
-        await event.delete()
-        os.mkdir("encodemedia")
-        await encode(event, msg, 360)
-        os.rmdir("encodemedia")
-        await set_timer(event, process1, timer) 
-    else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
-        
+
+
 @Drone.on(events.callbackquery.CallbackQuery(data="480"))
 async def _480(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
         return await event.reply(forcesubtext)
-    s, t = await check_timer(event, process1, timer) 
-    if s == False:
-        return await event.answer(t, alert=True)
     button = await event.get_message()
     msg = await button.get_reply_message()  
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 480)
+        cmd = '-vf scale=854x480 -b:v 1024k -quality good -speed 4 -crf 30'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
-        await set_timer(event, process1, timer) 
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+                  
+@Drone.on(events.callbackquery.CallbackQuery(data="360"))
+async def _360(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("encodemedia"):
+        await event.delete()
+        os.mkdir("encodemedia")
+        cmd = '-vf scale=640x360 -b:v 1024k -quality good -speed 4 -crf 30'
+        await encode(event, msg, cmd)
+        os.rmdir("encodemedia")
+    else:
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+                  
         
-@Drone.on(events.callbackquery.CallbackQuery(data="20"))
+
+@Drone.on(events.callbackquery.CallbackQuery(data="720"))
 async def _720(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
         return await event.reply(forcesubtext)
-    s, t = await check_timer(event, process1, timer) 
-    if s == False:
-        return await event.answer(t, alert=True)
     button = await event.get_message()
     msg = await button.get_reply_message()  
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 720)
+        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4 -crf 30'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
-        await set_timer(event, process1, timer) 
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
-@Drone.on(events.callbackquery.CallbackQuery(data="720"))
-async def _640(event):
-    yy = await force_sub(event.sender_id)
-    if yy is True:
-        return await event.reply(forcesubtext)
-    button = await event.get_message()
-    msg = await button.get_reply_message()  
-    if not os.path.isdir("compressmedia"):
-        await event.delete()
-        os.mkdir("compressmedia")
-        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4 -crf 30'
-        await compress(event, msg, cmd)
-        os.rmdir("compressmedia")
-    else:
-        await event.edit("Another process in progress!")
           
 @Drone.on(events.callbackquery.CallbackQuery(data="sshots"))
 async def ss_(event):
