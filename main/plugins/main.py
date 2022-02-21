@@ -353,7 +353,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=854x480 -b:v 750k -quality good -speed 4 -crf 30'
+        cmd = '-vf scale=854x480 -b:v 750k -quality good -speed 4 -crf 33'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -369,7 +369,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=640x360 -b:v 276k -quality good -speed 4 -crf 30'
+        cmd = '-vf scale=640x360 -b:v 276k -quality good -speed 4 -crf 36'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -385,7 +385,7 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=320x240 -b:v 196k -quality good -speed 4 -crf 30'
+        cmd = '-vf scale=320x240 -b:v 196k -quality good -speed 4 -crf 37'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -403,7 +403,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-minrate 900k -maxrate 2610k -tile-columns 2 -g 240 -threads 8'
+        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4 -crf 32'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
