@@ -1,4 +1,25 @@
-async def compress(event, msg, ffmpeg_cmd, ps_name=None):
+#TG:ChauhanMahesh/DroneBots
+#Github.com/vasusen-code
+
+import asyncio
+import time
+import subprocess
+import re
+import os
+from datetime import datetime as dt
+from .. import Drone, BOT_UN, LOG_CHANNEL
+from telethon import events
+from ethon.telefunc import fast_download, fast_upload
+from ethon.pyfunc import video_metadata
+from LOCAL.localisation import SUPPORT_LINK, JPG, JPG2, JPG3
+from LOCAL.utils import ffmpeg_progress
+from telethon.errors.rpcerrorlist import MessageNotModifiedError
+from telethon.tl.types import DocumentAttributeVideo
+from main.plugins.actions import LOG_START, LOG_END
+
+
+
+async def encode(event, msg, ffmpeg_cmd, ps_name=None):
     if ps_name is None:
         ps_name = '**ENCODING:**'
     Drone = event.client
