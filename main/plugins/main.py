@@ -426,7 +426,7 @@ async def _640(event):
     if not os.path.isdir("compressmedia"):
         await event.delete()
         os.mkdir("compressmedia")
-        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4'
+        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4 -crf 30'
         await compress(event, msg, cmd)
         os.rmdir("compressmedia")
     else:
