@@ -357,7 +357,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=854x480 -b:v 750k -quality good -speed 4 -crf 33'
+        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=854:480" -preset medium'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -373,7 +373,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=640x360 -b:v 276k -quality good -speed 4 -crf 36'
+        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=640:360" -preset medium'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -389,7 +389,7 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=320x240 -b:v 196k -quality good -speed 4 -crf 37'
+        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=320:240" -preset medium'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -405,7 +405,7 @@ async def _540(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=652x540 -b:v 800k -quality good -speed 4 -crf 33'
+        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=1024:576" -preset medium'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -422,7 +422,7 @@ async def _1080(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=1920x1080 -b:v 1800k -quality good -speed 4 -crf 31'
+        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=1920:1080" -preset medium'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -439,7 +439,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=1280x720 -b:v 1024k -quality good -speed 4 -crf 32'
+        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=1280:720" -preset medium'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
