@@ -65,7 +65,8 @@ async def _encode(event):
                          Button.inline("360p", data="360")],
                         [Button.inline("480p", data="480"),
                          Button.inline("540p", data="540")],
-                        [Button.inline("720p", data="720")],
+                        [Button.inline("720p", data="720")
+                         Button.inline("1080", data="1080")],
                         [Button.inline("x264", data="264"),
                          Button.inline("x265", data="265")],
                         [Button.inline("BACK", data="back")]])
@@ -356,7 +357,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 34 -acodec copy -vf "scale=854:480" -preset superfast'
+        cmd = '-vcodec libx265 -crf 33 -acodec copy -vf "scale=854:480" -preset veryfast'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -372,7 +373,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 37 -acodec copy -vf "scale=640:360" -preset superfast'
+        cmd = '-vcodec libx265 -crf 31 -acodec copy -vf "scale=640:360" -preset veryfast'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -388,7 +389,7 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 39 -acodec copy -vf "scale=320:240" -preset superfast'
+        cmd = '-vcodec libx265 -crf 33 -acodec copy -vf "scale=320:240" -preset veryfast'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -404,7 +405,7 @@ async def _540(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 34 -acodec copy -vf "scale=1024:576" -preset superfast'
+        cmd = '-vcodec libx265 -crf 32 -acodec copy -vf "scale=1024:576" -preset veryfast'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -421,7 +422,7 @@ async def _1080(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 34 -acodec copy -vf "scale=1920:1080" -preset superfast'
+        cmd = '-vcodec libx265 -crf 31 -acodec copy -vf "scale=1920:1080" -preset veryfast'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -438,7 +439,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 31 -acodec copy -vf "scale=1280:720" -preset superfast'
+        cmd = '-vcodec libx265 -crf 31 -acodec copy -vf "scale=1280:720" -preset veryfast'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
