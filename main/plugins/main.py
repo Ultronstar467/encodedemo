@@ -357,7 +357,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=854:480" -speed 4'
+        cmd = '-c:v libvpx-vp9 -c:a libopus -crf 28 -speed 4'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
