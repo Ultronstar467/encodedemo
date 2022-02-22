@@ -357,7 +357,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-c:v libvpx-vp9 -c:a libopus -crf 28 -speed 4'
+        cmd = '-c:v libvpx-vp9 -c:a libopus'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
