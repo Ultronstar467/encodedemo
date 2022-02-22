@@ -61,12 +61,12 @@ async def compin(event):
 async def _encode(event):
     await event.edit("**🔀ENCODE**",
                     buttons=[
-                        [Button.inline("240p", data="240"),
-                         Button.inline("360p", data="360")],
-                        [Button.inline("480p", data="480"),
-                         Button.inline("540p", data="540")],
-                        [Button.inline("720p", data="720"),
-                         Button.inline("1080", data="1080")],
+                        [Button.inline("240P", data="240"),
+                         Button.inline("360P", data="360")],
+                        [Button.inline("480P", data="480"),
+                         Button.inline("540P", data="540")],
+                        [Button.inline("720P", data="720"),
+                         Button.inline("1080P", data="1080")],
                         [Button.inline("x264", data="264"),
                          Button.inline("x265", data="265")],
                         [Button.inline("BACK", data="back")]])
