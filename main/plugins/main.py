@@ -439,7 +439,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=1280:720" -preset veryslow'
+        cmd = '-vcodec libx265 -crf 28 -acodec copy -vf "scale=1280:720" -speed 10'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
