@@ -81,8 +81,7 @@ async def _compress(event):
                          Button.inline("360P", data="002")],
                         [Button.inline("480P", data="003"),
                          Button.inline("540P", data="004")],
-                        [Button.inline("720P", data="005"),
-                         Button.inline("1080P", data="006")],
+                        [Button.inline("720P", data="005")],
                         [Button.inline("HEVC COMPRESS", data="hcomp"),
                          Button.inline("FAST COMPRESS", data="fcomp")],
                         [Button.inline("BACK", data="back")]])
@@ -408,12 +407,76 @@ async def _240(event):
         return await event.reply(forcesubtext)
     button = await event.get_message()
     msg = await button.get_reply_message()  
-    if not os.path.isdir("encodemedia"):
+    if not os.path.isdir("compressmedia"):
         await event.delete()
-        os.mkdir("encodemedia")
-        cmd = '-vf scale=320x240 -b:v 150k -quality good -speed 4 -crf 28'
-        await encode(event, msg, cmd)
-        os.rmdir("encodemedia")
+        os.mkdir("compressmedia")
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=320:240" -preset ultrafast'
+        await compress(event, msg, cmd)
+        os.rmdir("compressmedia")
+    else:
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+
+@Drone.on(events.callbackquery.CallbackQuery(data="002"))
+async def _360(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("compressmedia"):
+        await event.delete()
+        os.mkdir("compressmedia")
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=640:360" -preset ultrafast'
+        await compress(event, msg, cmd)
+        os.rmdir("compressmedia")
+    else:
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+
+@Drone.on(events.callbackquery.CallbackQuery(data="003"))
+async def _480(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("compressmedia"):
+        await event.delete()
+        os.mkdir("compressmedia")
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=854:480" -preset ultrafast'
+        await compress(event, msg, cmd)
+        os.rmdir("compressmedia")
+    else:
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+
+@Drone.on(events.callbackquery.CallbackQuery(data="004"))
+async def _540(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("compressmedia"):
+        await event.delete()
+        os.mkdir("compressmedia")
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=854:480" -preset ultrafast'
+        await compress(event, msg, cmd)
+        os.rmdir("compressmedia")
+    else:
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+
+@Drone.on(events.callbackquery.CallbackQuery(data="001"))
+async def _720(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("compressmedia"):
+        await event.delete()
+        os.mkdir("compressmedia")
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=1280:720" -preset ultrafast'
+        await compress(event, msg, cmd)
+        os.rmdir("compressmedia")
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
 
