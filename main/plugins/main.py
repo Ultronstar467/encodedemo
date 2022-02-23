@@ -507,7 +507,7 @@ async def _1080(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=1920x1080 -b:v 1400k -quality good -speed 4 -crf 28'
+        cmd = '-vf scale=1920x1080 -b:v 1500k -quality good -speed 4 -crf 28'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
