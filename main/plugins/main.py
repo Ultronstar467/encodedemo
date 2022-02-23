@@ -403,7 +403,7 @@ async def _240(event):
     if not os.path.isdir("compressmedia"):
         await event.delete()
         os.mkdir("compressmedia")
-        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=320:240" -preset ultrafast'
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=320:240" -preset veryfast'
         await compress(event, msg, cmd)
         os.rmdir("compressmedia")
     else:
@@ -419,7 +419,7 @@ async def _360(event):
     if not os.path.isdir("compressmedia"):
         await event.delete()
         os.mkdir("compressmedia")
-        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=640:360" -preset ultrafast'
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=640:360" -preset veryfast'
         await compress(event, msg, cmd)
         os.rmdir("compressmedia")
     else:
@@ -435,7 +435,7 @@ async def _480(event):
     if not os.path.isdir("compressmedia"):
         await event.delete()
         os.mkdir("compressmedia")
-        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=854:480" -preset ultrafast'
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=854:480" -preset veryfast'
         await compress(event, msg, cmd)
         os.rmdir("compressmedia")
     else:
@@ -451,7 +451,7 @@ async def _540(event):
     if not os.path.isdir("compressmedia"):
         await event.delete()
         os.mkdir("compressmedia")
-        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=854:480" -preset ultrafast'
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=854:480" -preset veryfast'
         await compress(event, msg, cmd)
         os.rmdir("compressmedia")
     else:
@@ -467,7 +467,7 @@ async def _720(event):
     if not os.path.isdir("compressmedia"):
         await event.delete()
         os.mkdir("compressmedia")
-        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=1280:720" -preset ultrafast'
+        cmd = '-vcodec libx264 -crf 30 -acodec copy -vf "scale=1280:720" -preset veryfast'
         await compress(event, msg, cmd)
         os.rmdir("compressmedia")
     else:
