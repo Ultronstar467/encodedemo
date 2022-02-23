@@ -77,6 +77,12 @@ async def _encode(event):
 async def _compress(event):
     await event.edit("**🗜COMPRESS**",
                     buttons=[
+                        [Button.inline("240P", data="001"),
+                         Button.inline("360P", data="002")],
+                        [Button.inline("480P", data="003"),
+                         Button.inline("540P", data="004")],
+                        [Button.inline("720P", data="005"),
+                         Button.inline("1080P", data="006")],
                         [Button.inline("HEVC COMPRESS", data="hcomp"),
                          Button.inline("FAST COMPRESS", data="fcomp")],
                         [Button.inline("BACK", data="back")]])
@@ -380,6 +386,22 @@ async def _360(event):
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
 
 @Drone.on(events.callbackquery.CallbackQuery(data="240"))
+async def _240(event):
+    yy = await force_sub(event.sender_id)
+    if yy is True:
+        return await event.reply(forcesubtext)
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("encodemedia"):
+        await event.delete()
+        os.mkdir("encodemedia")
+        cmd = '-vf scale=320x240 -b:v 150k -quality good -speed 4 -crf 28'
+        await encode(event, msg, cmd)
+        os.rmdir("encodemedia")
+    else:
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+
+@Drone.on(events.callbackquery.CallbackQuery(data="001"))
 async def _240(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
