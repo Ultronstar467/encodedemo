@@ -315,41 +315,34 @@ async def _264(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
         return await event.reply(forcesubtext)
-    s, t = await check_timer(event, process1, timer) 
-    if s == False:
-        return await event.answer(t, alert=True)
     button = await event.get_message()
     msg = await button.get_reply_message()  
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
         cmd = '-preset ultrafast -vcodec libx264 -crf 23 -acodec copy'
-        await compress(event, msg, cmd, "**ENCODING:**")
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
-        await set_timer(event, process1, timer) 
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+
       
+
 @Drone.on(events.callbackquery.CallbackQuery(data="265"))
 async def _265(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
         return await event.reply(forcesubtext)
-    s, t = await check_timer(event, process1, timer) 
-    if s == False:
-        return await event.answer(t, alert=True)
     button = await event.get_message()
     msg = await button.get_reply_message()  
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
         cmd = '-preset ultrafast -vcodec libx265 -crf 23 -acodec copy'
-        await compress(event, msg, cmd, "**ENCODING:**")
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
-        await set_timer(event, process1, timer) 
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
-        
+        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)        
 
 
 @Drone.on(events.callbackquery.CallbackQuery(data="480"))
