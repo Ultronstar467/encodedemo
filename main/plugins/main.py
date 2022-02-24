@@ -355,7 +355,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=854x480 -b:v 720k -quality good -speed 4 -crf 28'
+        cmd = '-vf scale=854x480 -b:v 0 -quality realtime -speed 8 -crf 28'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -371,7 +371,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=640x360 -b:v 220k -quality good -speed 4 -crf 28'
+        cmd = '-vf scale=640x360 -b:v 0 -quality realtime -speed 8 -crf 28'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -387,7 +387,7 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=320x240 -b:v 150k -quality good -speed 4 -crf 28'
+        cmd = '-vf scale=320x240 -b:v -quality realtime -speed 8 -crf 28'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -483,7 +483,7 @@ async def _540(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=1024x576 -b:v 750k -quality good -speed 4 -crf 28'
+        cmd = '-vf scale=1024x576 -b:v 0 -quality realtime -speed 8 -crf 28'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -500,7 +500,7 @@ async def _1080(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=1920x1080 -b:v 1500k -quality good -speed 4 -crf 28'
+        cmd = '-vf scale=1920x1080 -b:v 0 -quality realtime -speed 5 -crf 28'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -517,7 +517,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=1280x720 -b:v 950k -quality good -speed 4 -crf 28'
+        cmd = '-vf scale=1280x720 -b:v 0 -quality realtime -speed 5 -crf 28'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
