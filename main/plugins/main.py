@@ -37,12 +37,10 @@ async def compin(event):
             if 'video' in video:
                 await event.reply("📽",
                             buttons=[
-                                [Button.inline("ENCODE", data="encode"),
-                                 Button.inline("COMPRESS", data="compress")],
+                                [Button.inline("ENCODE", data="encode")],
                                 [Button.inline("CONVERT", data="convert"),
                                  Button.inline("RENAME", data="rename")],
-                                [Button.inline("SSHOTS", data="sshots"),
-                                 Button.inline("TRIM", data="trim")]
+                                [Button.inline("TRIM", data="trim")]
                             ])
             elif 'png' in video:
                 return
