@@ -43,7 +43,6 @@ async def plugins(event):
                    
  #-----------------------------------------------------------------------------------------------                            
     
-
 @Drone.on(events.callbackquery.CallbackQuery(data="sett"))
 async def sett(event):    
     button = await event.get_message()
@@ -78,4 +77,5 @@ async def res(event):
         await event.edit("An error occured!")
     elif result is True:
         await event.edit("Restarting app, wait for a minute.")
+
 
