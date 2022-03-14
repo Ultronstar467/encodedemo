@@ -373,7 +373,7 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=320x240 -b:v -quality realtime -speed 8 -crf 28'
+        cmd = '-c:v libx264 -pix_fmt yuv420p -preset ultrafast -s 426x240 -crf 18 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
