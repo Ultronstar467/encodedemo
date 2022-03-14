@@ -13,17 +13,15 @@ from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'Hey [{event.sender.first_name}](tg://user?id={event.sender_id})\n\nJust Send Me Video or File To Get Started', 
+    await event.reply(f'👋 Hᴇʏ [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI ᴀᴍ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟ ᴠɪᴅᴇᴏ ᴄᴏɴᴠᴇʀᴛᴇʀ ʙᴏᴛ\n\nUsᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ\n\nᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : [Tᴇʟʟʏʙᴏᴛs](t.me//tellybots)', 
                       buttons=[[
-                         Button.inline("🌌 SET THUMB", data="sett"),
-                         Button.inline("🗑️ DEL THUMB", data='remt')],
+                         Button.inline("🌌 sᴇᴛ ᴛʜᴜᴍʙ", data="sett"),
+                         Button.inline("🗑️ ᴅᴇʟ ᴛʜᴜᴍʙ", data='remt')],
                          [
-                         Button.inline("❔ HELP", data="plugins"),
-                         Button.inline("🗜️ RESTART", data="restart")],
+                         Button.inline("❔ ʜᴇʟᴘ", data="plugins"),
+                         Button.inline("🗜️ ʀᴇsᴛᴀʀᴛ", data="restart")],
                          [
-                         Button.inline("🎇 NOTICE", data="notice")],
-                         [
-                         Button.url("👲 DEV", url=f"t.me/Tellybots")]])
+                         Button.inline("♨️ ᴄʟᴏsᴇ ", data="close")]])
 
     tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await Drone.send_message(int(ACCESS_CHANNEL), f'{tag} started the BOT')
@@ -33,6 +31,10 @@ async def start(event):
 @Drone.on(events.callbackquery.CallbackQuery(data="notice"))
 async def notice(event):
     await event.answer(f'{spam_notice}', alert=True)
+
+@Drone.on(events.callbackquery.CallbackQuery(data="close"))
+async def close(event):
+    await event.delete()
     
 
     
