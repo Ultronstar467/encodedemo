@@ -38,46 +38,4 @@ async def close(event):
     
 
     
-@Drone.on(events.callbackquery.CallbackQuery(data="plugins"))
-async def plugins(event):
-    await event.edit(f'{help_text}',
-                    buttons=[[Button.inline("NOTICE", data="notice")]])
-                   
- #-----------------------------------------------------------------------------------------------                            
-    
-@Drone.on(events.callbackquery.CallbackQuery(data="sett"))
-async def sett(event):    
-    button = await event.get_message()
-    msg = await button.get_reply_message() 
-    await event.delete()
-    async with Drone.conversation(event.chat_id) as conv: 
-        xx = await conv.send_message("Send me any image for thumbnail as a `reply` to this message.")
-        x = await conv.get_reply()
-        if not x.media:
-            xx.edit("No media found.")
-        mime = x.file.mime_type
-        if not 'png' in mime:
-            if not 'jpg' in mime:
-                if not 'jpeg' in mime:
-                    return await xx.edit("No image found.")
-        await set_thumbnail(event, x.media)
-        await xx.delete()
-        
-@Drone.on(events.callbackquery.CallbackQuery(data="remt"))
-async def remt(event):  
-    await event.delete()
-    await rem_thumbnail(event)
-    
-@Drone.on(events.callbackquery.CallbackQuery(data="restart"))
-async def res(event):
-    if not f'{event.sender_id}' == f'{int(AUTH_USERS)}':
-        return await event.edit("Only authorized user can restart!")
-    result = await heroku_restart()
-    if result is None:
-        await event.edit("You have not filled `HEROKU_API` and `HEROKU_APP_NAME` vars.")
-    elif result is False:
-        await event.edit("An error occured!")
-    elif result is True:
-        await event.edit("Restarting app, wait for a minute.")
-
 
