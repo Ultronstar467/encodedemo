@@ -1,7 +1,5 @@
-icon: https://apps.okteto.com/movies/icon.png
+icon: https://tzchzblob.vercel.app/about.jpg
 deploy:
-  - okteto build -t okteto.dev/api:${OKTETO_GIT_COMMIT} api
-  - okteto build -t okteto.dev/frontend:${OKTETO_GIT_COMMIT} frontend
+  - okteto stack deploy --build -f docker-compose.yml
 devs:
-  - api/okteto.yml
-  - frontend/okteto.yml
+  - docker-compose.yml
