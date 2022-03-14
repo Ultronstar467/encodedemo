@@ -70,7 +70,7 @@ async def _encode(event):
                         [Button.inline("BACK", data="back")]])
 
                         
-@Drone.on(events.callbackquery.CallbackQuery(data="encode"))
+@Drone.on(events.callbackquery.CallbackQuery(data="compress"))
 async def _compress(event):
     await event.edit("**🗜️ COMPRESS**",
                     buttons=[
