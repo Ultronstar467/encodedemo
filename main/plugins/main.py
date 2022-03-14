@@ -341,7 +341,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=854x480 -b:v 0 -quality realtime -speed 8 -crf 28'
+        cmd = '-c:v libx264 -pix_fmt yuv420p -preset veryfast -s 854x480 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -357,7 +357,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-vf scale=640x360 -b:v 0 -quality realtime -speed 8 -crf 28'
+        cmd = '-c:v libx264 -pix_fmt yuv420p -preset veryfast -s 640x360 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
