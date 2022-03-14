@@ -363,7 +363,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-c:v libx264 -pix_fmt yuv420p -preset veryfast -s 640x360 -crf 28 -b:v 2000k -r 24 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        cmd = '-c:v libx264 -pix_fmt yuv420p -preset veryfast -s 640x360 -crf 28 -b:v 2000k -quality good -r 24 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
