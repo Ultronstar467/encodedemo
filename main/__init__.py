@@ -20,5 +20,28 @@ FORCESUB = config("FORCESUB", default=None)
 FORCESUB_UN = config("FORCESUB_UN", default=None)
 ACCESS_CHANNEL = config("ACCESS_CHANNEL", default=None)
 MONGODB_URI = config("MONGODB_URI", default=None)
+LIBRARY = config("LIBRARY", default="TELETHON")
 
+from ethon.pyfunc import bash
+
+if LIBRARY != "TELETHON":
+    bash("pip install tgcrypto")
+else:
+    bash("pip install pyaesni")
+    
 Drone = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN) 
+
+from pyrogram import Client
+
+PyroBot = Client(
+    "PyroClient",
+    bot_token=BOT_TOKEN,
+    api_id=int(API_ID),
+    api_hash=API_HASH
+)    
+
+try:
+    PyroBot.start()
+except Exception as e:
+    print(e)
+    sys.exit(1)
