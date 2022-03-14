@@ -13,15 +13,15 @@ from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'👋 Hᴇʏ [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI ᴀᴍ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟ ᴠɪᴅᴇᴏ ᴄᴏɴᴠᴇʀᴛᴇʀ ʙᴏᴛ\n\nUsᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ\n\nᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : [Tᴇʟʟʏʙᴏᴛs](@Tellybots)', 
+    await event.reply(f'👋 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Tellybots', 
                       buttons=[[
-                         Button.inline("🌌 sᴇᴛ ᴛʜᴜᴍʙ", data="sett"),
-                         Button.inline("🗑️ ᴅᴇʟ ᴛʜᴜᴍʙ", data='remt')],
+                         Button.inline("🌌 Set Thumb", data="sett"),
+                         Button.inline("🗑️ Del Thumb", data='remt')],
                          [
-                         Button.inline("❔ ʜᴇʟᴘ", data="plugins"),
-                         Button.inline("🗜️ ʀᴇsᴛᴀʀᴛ", data="restart")],
+                         Button.inline("❔ Help", data="plugins"),
+                         Button.inline("🗜️ Restart", data="restart")],
                          [
-                         Button.inline("♨️ ᴄʟᴏsᴇ ", data="close")]])
+                         Button.inline("♨️ Close ", data="close")]])
 
     tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await Drone.send_message(int(ACCESS_CHANNEL), f'{tag} started the BOT')
