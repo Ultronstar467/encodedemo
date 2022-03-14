@@ -37,7 +37,8 @@ async def compin(event):
             if 'video' in video:
                 await event.reply("📽",
                             buttons=[
-                                [Button.inline("ENCODE", data="encode")],
+                                [Button.inline("ENCODE", data="encode"),
+                                 Button.inline("COMPRESS", data="compress")],
                                 [Button.inline("CONVERT", data="convert"),
                                  Button.inline("RENAME", data="rename")],
                                 [Button.inline("TRIM", data="trim")]
@@ -64,12 +65,18 @@ async def _encode(event):
                          Button.inline("540P", data="540")],
                         [Button.inline("720P", data="720"),
                          Button.inline("1080P", data="1080")],
-                        [Button.inline("HEVC", data="hcomp"),
-                         Button.inline("FAST", data="fcomp")],
+                        [Button.inline("x264", data="264"),
+                         Button.inline("x265", data="265")],
                         [Button.inline("BACK", data="back")]])
 
                         
-     
+@Drone.on(events.callbackquery.CallbackQuery(data="encode"))
+async def _compress(event):
+    await event.edit("**🗜️ COMPRESS**",
+                    buttons=[
+                        [Button.inline("HEVC", data="hcomp"),
+                         Button.inline("FAST", data="fcomp")],
+                        [Button.inline("BACK", data="back")]])     
 
 
 @Drone.on(events.callbackquery.CallbackQuery(data="convert"))
@@ -91,7 +98,8 @@ async def convert(event):
 @Drone.on(events.callbackquery.CallbackQuery(data="back"))
 async def back(event):
     await event.edit("📽", buttons=[
-                    [Button.inline("ENCODE", data="encode")],
+                    [Button.inline("ENCODE", data="encode"),
+                     Button.inline("COMPRESS", data="compress")],
                     [Button.inline("CONVERT", data="convert"),
                      Button.inline("RENAME", data="rename")],
                     [Button.inline("TRIM", data="trim")]])
