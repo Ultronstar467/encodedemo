@@ -12,7 +12,7 @@ from ethon.mystarts import vc_menu
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'👋 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Tellybots', 
+    await event.reply(f'👋 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Sunrises24BotUpdates', 
                       buttons=[[
                          Button.inline("𝐒𝐄𝐓 𝐓𝐇𝐔𝐌𝐁🖼️", data="sett"),
                          Button.inline("𝐃𝐄𝐋 𝐓𝐇𝐔𝐌𝐁🗑️", data='remt')],
