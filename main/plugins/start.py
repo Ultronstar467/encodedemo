@@ -12,14 +12,15 @@ from ethon.mystarts import vc_menu
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'{st}', 
-                      buttons=[
-                              [Button.inline("𝐌𝐄𝐍𝐔 ➕", data="menu")]
-                              ])
-    
-@Drone.on(events.callbackquery.CallbackQuery(data="menu"))
-async def menu(event):
-    await vc_menu(event)
+    await event.reply(f'👋 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Tellybots', 
+                      buttons=[[
+                         Button.inline("🌌 Set Thumb", data="sett"),
+                         Button.inline("🗑️ Del Thumb", data='remt')],
+                         [
+                         Button.inline("❔ Help", data="plugins"),
+                         Button.inline("🗜️ Restart", data="restart")],
+                         [
+                         Button.inline("♨️ Close ", data="close")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="info"))
 async def info(event):
