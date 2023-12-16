@@ -14,7 +14,7 @@ from ethon.mystarts import vc_menu
 async def start(event):
     await event.reply(f'{st}', 
                       buttons=[
-                              [Button.inline("Menu.", data="menu")]
+                              [Button.inline("𝐌𝐄𝐍𝐔 ➕", data="menu")]
                               ])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="menu"))
@@ -23,9 +23,9 @@ async def menu(event):
     
 @Drone.on(events.callbackquery.CallbackQuery(data="info"))
 async def info(event):
-    await event.edit(f'**ℹ️NFO:**\n\n{info_text}',
+    await event.edit(f'**INFO:**\n\n{info_text}',
                     buttons=[[
-                         Button.inline("Menu.", data="menu")]])
+                         Button.inline("𝐌𝐄𝐍𝐔 ➕", data="menu")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="notice"))
 async def notice(event):
@@ -40,12 +40,12 @@ async def source(event):
                     
 @Drone.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
-    await event.edit('**👥HELP & SETTINGS.**',
+    await event.edit('**HELP & SETTINGS.**',
                     buttons=[[
                          Button.inline("𝐒𝐄𝐓 𝐓𝐇𝐔𝐌𝐁🖼️", data="sett"),
                          Button.inline("𝐃𝐄𝐋 𝐓𝐇𝐔𝐌𝐁🗑️", data='remt')],
                          [
-                         Button.inline("𝐇𝐄𝐋𝐏 🌟", data="plugins"),
+                         Button.inline("𝐃𝐄𝐓𝐀𝐈𝐋𝐒 ✨", data="plugins"),
                          Button.url("𝐔𝐏𝐃𝐀𝐓𝐄𝐒 📢", url=f"{SUPPORT_LINK}")],
                          [
                          Button.inline("𝐁𝐀𝐂𝐊 🔙", data="menu")]])
@@ -54,7 +54,7 @@ async def help(event):
 async def plugins(event):
     await event.edit(f'{help_text}',
                     buttons=[[
-                         Button.inline("Menu.", data="menu")]])
+                         Button.inline("𝐌𝐄𝐍𝐔 ➕", data="menu")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="sett"))
 async def sett(event):    
