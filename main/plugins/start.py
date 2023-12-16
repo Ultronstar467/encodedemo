@@ -14,48 +14,26 @@ from ethon.mystarts import vc_menu
 async def start(event):
     await event.reply(f'👋 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Tellybots', 
                       buttons=[[
-                         Button.inline("🌌 Set Thumb", data="sett"),
-                         Button.inline("🗑️ Del Thumb", data='remt')],
+                         Button.inline("𝐒𝐄𝐓 𝐓𝐇𝐔𝐌𝐁🖼️", data="sett"),
+                         Button.inline("𝐃𝐄𝐋 𝐓𝐇𝐔𝐌𝐁🗑️", data='remt')],
                          [
-                         Button.inline("❔ Help", data="plugins"),
-                         Button.inline("🗜️ Restart", data="restart")],
+                         Button.inline("𝐇𝐄𝐋𝐏 🌟", data="plugins"),
+                         Button.url("𝐔𝐏𝐃𝐀𝐓𝐄𝐒 📢", url=f"{SUPPORT_LINK}")],
                          [
-                         Button.inline("♨️ Close ", data="close")]])
-    
-@Drone.on(events.callbackquery.CallbackQuery(data="info"))
-async def info(event):
-    await event.edit(f'**INFO:**\n\n{info_text}',
-                    buttons=[[
-                         Button.inline("𝐌𝐄𝐍𝐔 ➕", data="menu")]])
+                         Button.inline("𝐂𝐋𝐎𝐒𝐄 ❌", data="close")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="notice"))
 async def notice(event):
     await event.answer(f'{spam_notice}', alert=True)
-    
-#@Drone.on(events.callbackquery.CallbackQuery(data="source"))
-#async def source(event):
-    #await event.edit(source_text,
-                    #buttons=[[
-                         #Button.url("FOR PERSONAL USE", url="https://github.com/vasusen-code/videoconvertor/tree/main"),
-                         #Button.url("FOR YOUR CHANNEL ", url="https://github.com/vasusen-code/videoconvertor/")]])
-                    
-@Drone.on(events.callbackquery.CallbackQuery(data="help"))
-async def help(event):
-    await event.edit('**HELP & SETTINGS.**',
-                    buttons=[[
-                         Button.inline("𝐒𝐄𝐓 𝐓𝐇𝐔𝐌𝐁🖼️", data="sett"),
-                         Button.inline("𝐃𝐄𝐋 𝐓𝐇𝐔𝐌𝐁🗑️", data='remt')],
-                         [
-                         Button.inline("𝐃𝐄𝐓𝐀𝐈𝐋𝐒 ✨", data="plugins"),
-                         Button.url("𝐔𝐏𝐃𝐀𝐓𝐄𝐒 📢", url=f"{SUPPORT_LINK}")],
-                         [
-                         Button.inline("𝐁𝐀𝐂𝐊 🔙", data="menu")]])
+
+@Drone.on(events.callbackquery.CallbackQuery(data="close"))
+async def close(event):
+    await event.delete()
     
 @Drone.on(events.callbackquery.CallbackQuery(data="plugins"))
 async def plugins(event):
     await event.edit(f'{help_text}',
-                    buttons=[[
-                         Button.inline("𝐌𝐄𝐍𝐔 ➕", data="menu")]])
+                    buttons=[[Button.inline("NOTICE", data="notice")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="sett"))
 async def sett(event):    
