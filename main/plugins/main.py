@@ -41,7 +41,8 @@ async def compin(event):
                                  Button.inline("COMPRESS", data="compress")],
                                 [Button.inline("CONVERT", data="convert"),
                                  Button.inline("RENAME", data="rename")],
-                                [Button.inline("TRIM", data="trim")]
+                                [Button.inline("SSHOTS", data="sshots"),
+                                 Button.inline("TRIM", data="trim")]
                             ])
             elif 'png' in video:
                 return
@@ -437,7 +438,12 @@ async def _720(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
           
-
+@Drone.on(events.callbackquery.CallbackQuery(data="sshots"))
+async def ss_(event):
+    button = await event.get_message()
+    msg = await button.get_reply_message()
+    await event.delete()
+    await screenshot(event, msg) 
     
 @Drone.on(events.callbackquery.CallbackQuery(data="trim"))
 async def vtrim(event):
