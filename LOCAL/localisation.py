@@ -21,6 +21,8 @@ help_text = """•`Encode` - encode your video into different lib format or reso
 
 •`Rename` - rename any file, extension not required
 
+•`SSHOTS` - generate 10 screenshots of your video
+
 •`Trim` - cut your videos"""
 
 source_text = "**Deploy your own bot**"
