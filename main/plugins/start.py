@@ -13,15 +13,16 @@ from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'👋 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Tellybots', 
+    await event.reply(f'👋🏻 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Sunrises24BotUpdates', 
                       buttons=[[
-                         Button.inline("🌌 Set Thumb", data="sett"),
-                         Button.inline("🗑️ Del Thumb", data='remt')],
+                         Button.inline("𝐒𝐄𝐓 𝐓𝐇𝐔𝐌𝐁🖼️", data="sett"),
+                         Button.inline("𝐃𝐄𝐋 𝐓𝐇𝐔𝐌𝐁🗑️", data='remt')],
                          [
-                         Button.inline("❔ Help", data="plugins"),
-                         Button.inline("🗜️ Restart", data="restart")],
-                         [
-                         Button.inline("♨️ Close ", data="close")]])
+                         Button.inline("𝐇𝐄𝐋𝐏 🌟", data="plugins"),
+                         Button.url("𝐔𝐏𝐃𝐀𝐓𝐄𝐒 📢", url=f"{SUPPORT_LINK}")],
+                         [[
+                         Button.inline("𝐑𝐄𝐒𝐓𝐀𝐑𝐓 🔁", data="restart"),
+                         Button.inline("𝐂𝐋𝐎𝐒𝐄 ❌", data="close")]])
 
     tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await Drone.send_message(int(ACCESS_CHANNEL), f'{tag} started the BOT')
