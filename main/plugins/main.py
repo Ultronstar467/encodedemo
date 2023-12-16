@@ -17,6 +17,7 @@ from main.plugins.actions import force_sub
 from ethon.telefunc import fast_download
 from ethon.pyfunc import video_metadata
 from main.plugins.encoder import encode
+from main.plugins.ssgen import screenshot
 
 #Don't be a MF by stealing someone's hardwork.
 forcesubtext = f"Hey there !!To use this bot you've to join @{FORCESUB_UN}"
