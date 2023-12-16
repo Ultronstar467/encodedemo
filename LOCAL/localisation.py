@@ -33,10 +33,10 @@ DEV = "https://t.me/Sunrises_24"
 
 spam_notice = "This bot is hosted on heroku, and hence can just run one process at a time.Spamming the bot or encoding adult videos will lead you to a ban."
 
-JPG = ""
+JPG = "LOCAL/video_convertor.jpg"
 
-JPG0 = ''
+JPG0 = 'https://graph.org/file/6e575838de916a2b0969c.jpg'
 
-JPG2 = ""
+JPG2 = "LOCAL/video_convertor.jpg"
 
-JPG3 = ""
+JPG3 = "LOCAL/video_convertor.jpg"
