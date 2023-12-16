@@ -33,7 +33,10 @@ async def close(event):
 @Drone.on(events.callbackquery.CallbackQuery(data="plugins"))
 async def plugins(event):
     await event.edit(f'{help_text}',
-                    buttons=[[Button.inline("NOTICE", data="notice")]])
+                    buttons=[[
+                       Button.inline("NOTICE", data="notice")],
+                       [
+                       Button.inline("𝐂𝐋𝐎𝐒𝐄 ❌", data="close")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="sett"))
 async def sett(event):    
