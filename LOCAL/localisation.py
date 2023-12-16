@@ -1,7 +1,7 @@
 #Don't be a thief by stealing other's Hardwork, it took time and effort to make this repo.
 #Respect my work by not making any changes here.
 
-START_TEXT = "👋🏻 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Sunrises24BotUpdates."
+START_TEXT = "👋🏻 Hey {} ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Sunrises24BotUpdates."
 
 FORCE_SUB_TEXT = "In order to use this bot, you've to join my channel."
 
