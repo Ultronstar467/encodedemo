@@ -5,11 +5,11 @@ START_TEXT = "Send me any file to begin."
 
 FORCE_SUB_TEXT = "In order to use this bot, you've to join my update channel."
 
-CHANNEL_LINK = "https://t.me/Tellybots"
+CHANNEL_LINK = "https://t.me/sunriseseditsoffical6"
 
-SUPPORT_LINK = "https://t.me/Tellybots_support"
+SUPPORT_LINK = "https://t.me/Sunrises24BotUpdates"
 
-info_text = "This bot is developed by @MaheshChauhan\n\nWritten in python library TELETHON.\n\nBot by : @DroneBots\nSupport : @TeamDrone\n\nV1.4"   
+info_text = "This bot is developed by @Sunrises_24\n\nWritten in python library TELETHON.\n\nBot by : @Sunrises24BotUpdates\n\nV4.0"   
 
 help_text = """•`Encode` - encode your video into different lib format or resolution
 
@@ -25,17 +25,17 @@ help_text = """•`Encode` - encode your video into different lib format or reso
 
 source_text = "**Deploy your own bot**"
 
-DEV = "https://t.me/MaheshChauhan"
+DEV = "https://t.me/Sunrises_24"
 
 spam_notice = "This bot is hosted on heroku, and hence can just run one process at a time.Spamming the bot or encoding adult videos will lead you to a ban."
 
 JPG = "LOCAL/video_convertor.jpg"
 
-JPG0 = 'https://telegra.ph/file/d98c559b56ef884ef3bad.jpg'
+JPG0 = 'https://graph.org/file/6e575838de916a2b0969c.jpg'
 
-JPG2 = "LOCAL/20211215_165751.jpg"
+JPG2 = "LOCAL/video_convertor.jpg"
 
-JPG3 = "LOCAL/PicsArt_12-16-08.57.15.jpg"
+JPG3 = "LOCAL/video_convertor.jpg"
 
-JPG4 = "LOCAL/20211219_000258.jpg"
+JPG4 = "LOCAL/video_convertor.jpg"
 
