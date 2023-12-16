@@ -42,13 +42,13 @@ async def source(event):
 async def help(event):
     await event.edit('**👥HELP & SETTINGS.**',
                     buttons=[[
-                         Button.inline("SET THUMB", data="sett"),
-                         Button.inline("REM THUMB", data='remt')],
+                         Button.inline("𝐒𝐄𝐓 𝐓𝐇𝐔𝐌𝐁🖼️", data="sett"),
+                         Button.inline("𝐃𝐄𝐋 𝐓𝐇𝐔𝐌𝐁🗑️", data='remt')],
                          [
-                         Button.inline("PLUGINS", data="plugins"),
-                         Button.url("SUPPORT", url=f"{SUPPORT_LINK}")],
+                         Button.inline("𝐇𝐄𝐋𝐏 🌟", data="plugins"),
+                         Button.url("𝐔𝐏𝐃𝐀𝐓𝐄𝐒 📢", url=f"{SUPPORT_LINK}")],
                          [
-                         Button.inline("BACK", data="menu")]])
+                         Button.inline("𝐁𝐀𝐂𝐊 🔙", data="menu")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="plugins"))
 async def plugins(event):
