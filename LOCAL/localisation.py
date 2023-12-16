@@ -1,17 +1,17 @@
 #Don't be a thief by stealing other's Hardwork, it took time and effort to make this repo.
 #Respect my work by not making any changes here.
 
-START_TEXT = "Send me any file to begin."
+START_TEXT = "👋🏻 Hey [{event.sender.first_name}](tg://user?id={event.sender_id}) ♡\n\nI am Telegram Most Powerful Video Convertor Bot\n\nUse Help Button to know How to use me\n\nMaintained By : @Sunrises24BotUpdates."
 
-FORCE_SUB_TEXT = "In order to use this bot, you've to join my parent channel."
+FORCE_SUB_TEXT = "In order to use this bot, you've to join my channel."
 
-CHANNEL_LINK = "https://t.me/DroneBots"
+CHANNEL_LINK = "https://t.me/sunriseseditsoffical6"
 
-SUPPORT_LINK = "https://t.me/TeamDrone"
+SUPPORT_LINK = "https://t.me/Sunrises24BotUpdates"
 
-info_text = "This bot is developed by @MaheshChauhan\n\nWritten in python library TELETHON.\n\nBot by : @DroneBots\nSupport : @TeamDrone\n\nV1.4"   
+info_text = "This bot is developed by @Sunrises_24\n\nWritten in python library TELETHON.\n\nBot by : @Sunrises24BotUpdates"   
 
-help_text = """**v1.4**
+help_text = """**v4.0**
 
 •`Encode` - encode your video into different lib format or resolution
 
@@ -29,7 +29,7 @@ help_text = """**v1.4**
 
 source_text = "**Deploy your own bot**"
 
-DEV = "https://t.me/MaheshChauhan"
+DEV = "https://t.me/Sunrises_24"
 
 spam_notice = "This bot is hosted on heroku, and hence can just run one process at a time.Spamming the bot or encoding adult videos will lead you to a ban."
 
