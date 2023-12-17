@@ -45,7 +45,9 @@ async def _encode(event):
                         [Button.inline("240p", data="240"),
                          Button.inline("360p", data="360")],
                         [Button.inline("480p", data="480"),
-                         Button.inline("720p", data="720")],
+                         Button.inline("540P", data="540")],
+                        [Button.inline("720p", data="720"),
+                         Button.inline("1080P", data="1080")],
                         [Button.inline("x264", data="264"),
                          Button.inline("x265", data="265")],
                         [Button.inline("BACK", data="back")]])
@@ -263,6 +265,18 @@ async def _480(event):
     else:
         await event.edit("Another process in progress!")
         
+@Drone.on(events.callbackquery.CallbackQuery(data="540"))
+async def _540(event):
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("encodemedia"):
+        await event.delete()
+        os.mkdir("encodemedia")
+        await encode(event, msg, 540)
+        os.rmdir("encodemedia")
+    else:
+        await event.edit("Another process in progress!")
+        
 @Drone.on(events.callbackquery.CallbackQuery(data="720"))
 async def _720(event):
     button = await event.get_message()
@@ -271,6 +285,18 @@ async def _720(event):
         await event.delete()
         os.mkdir("encodemedia")
         await encode(event, msg, 720)
+        os.rmdir("encodemedia")
+    else:
+        await event.edit("Another process in progress!")
+        
+@Drone.on(events.callbackquery.CallbackQuery(data="1080"))
+async def _1080(event):
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("encodemedia"):
+        await event.delete()
+        os.mkdir("encodemedia")      
+        await encode(event, msg, 1080)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
