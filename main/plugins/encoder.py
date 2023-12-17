@@ -54,7 +54,7 @@ async def encode(event, msg, scale):
     progress = f"progress-{FT}.txt"
     cmd = f'ffmpeg -hide_banner -loglevel quiet -progress {progress} -i """{name}""" -filter:v scale={str(scale)}:-1 -c:a copy """{out}""" -y'
     try:
-        await ffmpeg_progress(cmd, name, progress, FT, edit, '**ECODING:**')
+        await ffmpeg_progress(cmd, name, progress, FT, edit, '**ENCODING:**')
     except Exception as e:
         os.rmdir("encodemedia")
         print(e)
@@ -67,7 +67,7 @@ async def encode(event, msg, scale):
     os.rename(out, out2)
     i_size = os.path.getsize(name)
     f_size = os.path.getsize(out2)
-    text = f'**ENCODED by** : @{BOT_UN}\n\nbefore encoding : `{i_size}`\nafter ecoding : `{f_size}`'
+    text = f'**ENCODED by** : @{BOT_UN}\n\nbefore encoding : `{i_size}`\nafter encoding : `{f_size}`'
     UT = time.time()
     if 'webm' in mime:
         try:
