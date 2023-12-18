@@ -9,6 +9,7 @@ from LOCAL.localisation import JPG0 as file
 from LOCAL.localisation import info_text, spam_notice, help_text, DEV, source_text, SUPPORT_LINK
 from ethon.teleutils import mention
 from ethon.mystarts import vc_menu
+from main.plugins.actions import heroku_restart
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
