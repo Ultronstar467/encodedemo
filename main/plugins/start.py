@@ -20,6 +20,7 @@ async def start(event):
                          Button.inline("𝐇𝐄𝐋𝐏 🌟", data="plugins"),
                          Button.url("𝐔𝐏𝐃𝐀𝐓𝐄𝐒 📢", url=f"{SUPPORT_LINK}")],
                          [
+                         Button.inline("𝐑𝐄𝐒𝐓𝐀𝐑𝐓 🔁", data="restart"),    
                          Button.inline("𝐂𝐋𝐎𝐒𝐄 ❌", data="close")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="notice"))
