@@ -2,7 +2,7 @@
 #github.com/vasusen-code
 
 import os
-from .. import Drone
+from .. import Drone, AUTH_USERS
 from telethon import events, Button
 from LOCAL.localisation import START_TEXT as st
 from LOCAL.localisation import JPG0 as file
