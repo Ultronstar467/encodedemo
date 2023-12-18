@@ -24,6 +24,10 @@
             "description": "Bot token, get it from @BotFather.",
             "value": ""
         },
+        "AUTH_USERS": {
+            "description": "Bot owner's UserID.",
+            "value": ""
+        },
         "BOT_UN": {
             "description": "Your bot username here. Do not use '@'.",
             "value": ""
