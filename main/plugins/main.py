@@ -284,7 +284,8 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 720)
+        cmd = '-c:v libx264 -pix_fmt yuv420p -preset veryfast -s 1280x720 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
