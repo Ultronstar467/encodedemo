@@ -2,4 +2,5 @@ cryptg
 https://github.com/vasusen-code/ethon/archive/refs/tags/v0.1.4.zip
 python-decouple
 telethon
-
+heroku3
+ffmpeg-python
