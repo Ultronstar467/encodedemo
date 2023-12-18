@@ -2,7 +2,7 @@
 #github.com/vasusen-code
 
 import heroku3 
-from .. import Drone
+from .. import Drone, AUTH_USERS
     
 #Heroku--------------------------------------------------------------------------------------------------------------
    
