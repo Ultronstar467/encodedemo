@@ -2,7 +2,7 @@
   <img src="https://graph.org/file/ef1fae45c886e58f47713.jpg" alt="VideoConvertor poster">
 </p>
 <h1 align="center">
-  <b>ᴠɪᴅᴇᴏ 24 ᴄᴏɴᴠᴇʀᴛᴏʀ</b>
+  <b>ᴠɪᴅᴇᴏ ᴄᴏɴᴠᴇʀᴛᴏʀ 24</b>
 </h1>
 
 Add this buildpack if deploying manually (Read tutorial) : 
