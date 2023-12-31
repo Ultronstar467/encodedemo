@@ -1,4 +1,5 @@
-#Github.com/Vasusen-code
+#TG:Sunrises24BotUpdates 
+#@sunrises_24
 
 import os
 import time
