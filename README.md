@@ -4,6 +4,9 @@
 <h1 align="center">
   <b>ᴠɪᴅᴇᴏ ᴄᴏɴᴠᴇʀᴛᴏʀ 24</b>
 </h1>
+#### The Easy Way
+
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 Add this buildpack if deploying manually (Read tutorial) : 
 - `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
