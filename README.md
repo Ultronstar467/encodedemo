@@ -22,7 +22,7 @@ Add this buildpack if deploying manually (Read tutorial) :
 - `heroku/python`
 
 ## Credits 
-* [![ꜱᴜɴʀɪꜱᴇꜱ ʜᴀʀꜱʜᴀ 𝟸𝟺 🇮🇳 ᵀᴱᴸ](https://img.shields.io/static/v1?label=ꜱᴜɴʀɪꜱᴇꜱ ʜᴀʀꜱʜᴀ 𝟸𝟺 🇮🇳 ᵀᴱᴸ&message=devs&color=critical)](https://telegram.dog/Sunrises_24)
+* [![ꜱᴜɴʀɪꜱᴇꜱ ʜᴀʀꜱʜᴀ 𝟸𝟺 🇮🇳 ᵀᴱᴸ](https://img.shields.io/static/v1?label=ꜱᴜɴʀɪꜱᴇꜱʜᴀʀꜱʜᴀ𝟸𝟺🇮🇳&message=devs&color=critical)](https://telegram.dog/Sunrises_24)
 
 LICENSE:
 
