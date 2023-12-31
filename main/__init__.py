@@ -1,4 +1,5 @@
-#ChauhanMahesh/DroneBots/COL
+#TG:Sunrises24BotUpdates 
+#@sunrises_24
 
 from telethon import TelegramClient
 from decouple import config
