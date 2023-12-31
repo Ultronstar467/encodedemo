@@ -1,5 +1,5 @@
-#tg:chauhanMahesh/DroneBots
-#github.com/vasusen-code
+#TG:Sunrises24BotUpdates 
+#@sunrises_24
 
 import heroku3 
 from .. import Drone, AUTH_USERS
