@@ -1,5 +1,5 @@
-#tg:ChauhanMahesh/DroneBots
-#github.com/vasusen-code
+#TG:Sunrises24BotUpdates 
+#@sunrises_24
 
 import os
 from .. import Drone, AUTH_USERS
