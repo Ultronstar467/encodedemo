@@ -5,6 +5,9 @@
   <b>ᴠɪᴅᴇᴏ ᴄᴏɴᴠᴇʀᴛᴏʀ 24</b>
 </h1>
 
+## Deploy
+You can deploy this bot Heroku ⚡.
+
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
@@ -17,6 +20,9 @@
 Add this buildpack if deploying manually (Read tutorial) : 
 - `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
 - `heroku/python`
+
+## Credits 
+* [![LazyUrlHunterr-Devs](https://img.shields.io/static/v1?label=LazyUrlHunterBOT&message=devs&color=critical)](https://telegram.dog/Sunrises_24)
 
 LICENSE:
 
