@@ -248,8 +248,8 @@ async def rename(event):
             return await cm.edit("An error occured while waiting for the response.")
     await media_rename(event, msg, new_name)  
     
-@Drone.on(events.callbackquery.CallbackQuery(data="fcomp"))
-async def fcomp(event):
+@Drone.on(events.callbackquery.CallbackQuery(data="1080"))
+async def _1080(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
         return await event.reply(forcesubtext)
@@ -260,12 +260,12 @@ async def fcomp(event):
         return await event.answer(f"You have to wait {300-round(present-float(last))} seconds more to start a new process!", alert=True)
     button = await event.get_message()
     msg = await button.get_reply_message()
-    if not os.path.isdir("encodemedia"):
+    if not os.path.isdir("compressmedia"):
         await event.delete()
-        os.mkdir("encodemedia")
-        cmd = '-vf scale=-1:360 -c:v libx265 -crf 22 -preset ultrafast -c:a copy'
+        os.mkdir("compressmedia")
+        cmd = '-preset ultrafast -vcodec libx265 -pix_fmt yuv420p10le -crf 28 -s 1920x1080 -acodec copy'
         await compress(event, msg, cmd)
-        os.rmdir("encodemedia")
+        os.rmdir("compressmedia")
         now = time.time()
         timer.append(f'{now}')
         process1.append(f'{event.sender_id}')
@@ -405,7 +405,7 @@ async def _540(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
                   
-                                    
+"""                                    
 @Drone.on(events.callbackquery.CallbackQuery(data="1080"))
 async def _1080(event):
     yy = await force_sub(event.sender_id)
@@ -421,7 +421,7 @@ async def _1080(event):
         os.rmdir("encodemedia")
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
-                  
+   """               
 
 @Drone.on(events.callbackquery.CallbackQuery(data="720"))
 async def _720(event):
